@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحويل النص إلى صوت وفيديو</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎤 تحويل النص إلى صوت وفيديو 🎧</h1>
+        
+        <textarea id="textInput" placeholder="📝 أدخل النص هنا..."></textarea>
+        
+        <label for="language">🌍 اختر اللغة:</label>
+        <select id="language">
+            <option value="ar-sa">العربية - ذكر</option>
+            <option value="ar-eg">العربية - أنثى</option>
+            <option value="en-gb">الإنجليزية - ذكر</option>
+            <option value="en-us">الإنجليزية - أنثى</option>
+            <option value="fr-fr">الفرنسية</option>
+            <option value="es-es">الإسبانية</option>
+        </select>
+
+        <label for="speed">⚡ سرعة الصوت:</label>
+        <input type="range" id="speed" min="0.5" max="2" step="0.1" value="1">
+
+        <label for="pitch">🔊 نبرة الصوت:</label>
+        <input type="range" id="pitch" min="0.5" max="2" step="0.1" value="1">
+
+        <button onclick="speak()">🔊 تشغيل الصوت</button>
+        <button onclick="saveAudio()">💾 حفظ المقطع الصوتي</button>
+        <button onclick="generateVideo()">🎬 تحويل النص إلى فيديو</button>
+
+        <div id="videoContainer">
+            <video id="generatedVideo" controls></video>
+        </div>
+    </div>
+
+    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
